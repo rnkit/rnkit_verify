@@ -5,24 +5,43 @@
  */
 
 import React, { Component } from 'react';
-import { AppRegistry, Text, StyleSheet, View, TouchableHighlight } from 'react-native';
+import { AppRegistry, Text, StyleSheet, View, TouchableHighlight, Platform } from 'react-native';
 import RNKitMoXie from "rnkit_moxie";
-import { DeviceEventEmitter } from 'react-native';
+import { DeviceEventEmitter, NativeEventEmitter } from 'react-native';
 
 export default class App extends Component {
     constructor(props) {
         super(props);
-        RNKitMoXie.initial('15172443007', '3be322fb90ce4af9b85c19577fbdaf5b');
-        DeviceEventEmitter.addListener('loginDone', function (e) {
-            console.log('接收到事件');
-            console.log(e.functionName);
-        });
+        this._initMoxie()
         this.state = {
             count: -3
         }
     }
 
+    componentWillUnmount() {
+        if (moxieSubscription) {
+            moxieSubscription.remove()
+        }
+    }
 
+    _initMoxie () {
+        RNKitMoXie.initial('15172443007', '3be322fb90ce4af9b85c19577fbdaf5b')
+        if (Platform.OS === 'ios') {
+            const moxieEmitter = new NativeEventEmitter(RNKitMoXie)
+            const moxieSubscription = moxieEmitter.addListener('loginDone', (e) => {
+                this._callbackForMoxie(e)
+            });
+        } else {
+            DeviceEventEmitter.addListener('loginDone', function (e) {
+                this._callbackForMoxie(e)
+            })
+        }
+    }
+
+    _callbackForMoxie(e) {
+        console.log('接收到事件')
+        console.log(e.functionName)
+    }
 
     async _nextPage() {
         console.log("这里执行了")

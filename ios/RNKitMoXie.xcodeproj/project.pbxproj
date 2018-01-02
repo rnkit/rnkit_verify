@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E140CF711FFB71A9001FC424 /* RNKitMoXie.m in Sources */ = {isa = PBXBuildFile; fileRef = E140CF701FFB71A9001FC424 /* RNKitMoXie.m */; };
+		E140CFA81FFB72B7001FC424 /* MoxieStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E140CFA01FFB72B7001FC424 /* MoxieStatusView.m */; };
+		E140CFA91FFB72B7001FC424 /* libMoxieSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E140CFA71FFB72B7001FC424 /* libMoxieSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +28,12 @@
 		E140CF581FFB7123001FC424 /* libRNKitMoXie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNKitMoXie.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E140CF6F1FFB71A9001FC424 /* RNKitMoXie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNKitMoXie.h; sourceTree = "<group>"; };
 		E140CF701FFB71A9001FC424 /* RNKitMoXie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNKitMoXie.m; sourceTree = "<group>"; };
+		E140CF9F1FFB72B7001FC424 /* MoxieStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoxieStatusView.h; sourceTree = "<group>"; };
+		E140CFA01FFB72B7001FC424 /* MoxieStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoxieStatusView.m; sourceTree = "<group>"; };
+		E140CFA31FFB72B7001FC424 /* MoxieSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoxieSDK.h; sourceTree = "<group>"; };
+		E140CFA51FFB72B7001FC424 /* mx_refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mx_refresh@2x.png"; sourceTree = "<group>"; };
+		E140CFA61FFB72B7001FC424 /* mx_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mx_back@2x.png"; sourceTree = "<group>"; };
+		E140CFA71FFB72B7001FC424 /* libMoxieSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMoxieSDK.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E140CFA91FFB72B7001FC424 /* libMoxieSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,7 @@
 			children = (
 				E140CF6F1FFB71A9001FC424 /* RNKitMoXie.h */,
 				E140CF701FFB71A9001FC424 /* RNKitMoXie.m */,
+				E140CF9D1FFB72B7001FC424 /* MoxieSDK */,
 				E140CF591FFB7123001FC424 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +64,51 @@
 				E140CF581FFB7123001FC424 /* libRNKitMoXie.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E140CF9D1FFB72B7001FC424 /* MoxieSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E140CF9E1FFB72B7001FC424 /* MXView */,
+				E140CFA11FFB72B7001FC424 /* include */,
+				E140CFA41FFB72B7001FC424 /* resources */,
+				E140CFA71FFB72B7001FC424 /* libMoxieSDK.a */,
+			);
+			path = MoxieSDK;
+			sourceTree = "<group>";
+		};
+		E140CF9E1FFB72B7001FC424 /* MXView */ = {
+			isa = PBXGroup;
+			children = (
+				E140CF9F1FFB72B7001FC424 /* MoxieStatusView.h */,
+				E140CFA01FFB72B7001FC424 /* MoxieStatusView.m */,
+			);
+			path = MXView;
+			sourceTree = "<group>";
+		};
+		E140CFA11FFB72B7001FC424 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				E140CFA21FFB72B7001FC424 /* MoxieSDK */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		E140CFA21FFB72B7001FC424 /* MoxieSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E140CFA31FFB72B7001FC424 /* MoxieSDK.h */,
+			);
+			path = MoxieSDK;
+			sourceTree = "<group>";
+		};
+		E140CFA41FFB72B7001FC424 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				E140CFA51FFB72B7001FC424 /* mx_refresh@2x.png */,
+				E140CFA61FFB72B7001FC424 /* mx_back@2x.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E140CF711FFB71A9001FC424 /* RNKitMoXie.m in Sources */,
+				E140CFA81FFB72B7001FC424 /* MoxieStatusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +284,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MoxieSDK",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -239,6 +299,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MoxieSDK",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
