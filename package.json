@@ -1,9 +1,9 @@
 {
   "name": "rnkit_sensor",
-  "description": "埋点",
+  "description": "魔蝎",
   "main": "lib/index.js",
   "author": "carlos",
-  "version": "1.0.5",
+  "version": "1.0.0",
   "scripts": {
     "test": "npm run test"
   },
@@ -16,10 +16,7 @@
   "keywords": [
     "react",
     "react-native",
-    "react-component",
-    "sensor",
-    "rnkit",
-    "rnkit-sensor"
+    "react-component"
   ],
   "peerDependencies": {
     "react": ">=15.3.1",

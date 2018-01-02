@@ -3256,7 +3256,7 @@ rndm@1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/rndm/download/rndm-1.2.0.tgz#f33fe9cfb52bbfd520aa18323bc65db110a1b76c"
 
-rnkit_sensor@../:
+rnkit_moxie@../:
   version "1.0.0"
 
 run-async@^0.1.0:

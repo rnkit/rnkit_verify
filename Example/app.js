@@ -5,17 +5,18 @@
  */
 
 import React, { Component } from 'react';
-import { AppRegistry, Text ,StyleSheet,View,TouchableHighlight} from 'react-native';
-import RNKitSensor from "rnkit_sensor";
+import { AppRegistry, Text, StyleSheet, View, TouchableHighlight } from 'react-native';
+import RNKitMoXie from "rnkit_moxie";
+import { DeviceEventEmitter } from 'react-native';
 
 export default class App extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        RNKitSensor.initial('你好呀',20,5);
-        // RNKitSensor.check();
-        // RNKitSensor.save("11111","222222",9);
-        // RNKitSensor.save("11111","222222",9);
-        console.log('哈哈哈哈========');
+        RNKitMoXie.initial('15172443007', '3be322fb90ce4af9b85c19577fbdaf5b');
+        DeviceEventEmitter.addListener('loginDone', function (e) {
+            console.log('接收到事件');
+            console.log(e.functionName);
+        });
         this.state = {
             count: -3
         }
@@ -24,32 +25,27 @@ export default class App extends Component {
 
 
     async _nextPage() {
-
-        try {
-            var count = await RNKitSensor.getFailCount();
-            console.log('返回值是:====' + count);
-        } catch (e) {
-            console.log('错误是:====' + e);
-        }
+        console.log("这里执行了")
+        RNKitMoXie.start('email');
     }
-  render() {
+    render() {
 
-    return (
+        return (
 
-        <View style={styles.constainer}>
+            <View style={styles.constainer}>
 
-            <TouchableHighlight
-                style={styles.touch}
-                onPress={this._nextPage.bind(this)}>
-                <View>
-                    <Text>下一个页面</Text>
-                </View>
-            </TouchableHighlight>
-        </View>
+                <TouchableHighlight
+                    style={styles.touch}
+                    onPress={this._nextPage.bind(this)}>
+                    <View>
+                        <Text>下一个页面</Text>
+                    </View>
+                </TouchableHighlight>
+            </View>
 
-    )
+        )
 
-   }
+    }
 }
 
 

@@ -1,4 +1,4 @@
-package io.rnkit.sensor;
+package io.rnkit.moxie;
 
 /**
  * Created by carlos on 2017/8/17.

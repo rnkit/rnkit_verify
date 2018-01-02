@@ -1,4 +1,4 @@
-package io.rnkit.sensor;
+package io.rnkit.moxie;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
