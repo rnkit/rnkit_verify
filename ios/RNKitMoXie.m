@@ -46,10 +46,10 @@ RCT_EXPORT_METHOD(start:(NSString*)functionName) {
     int code = [resultDictionary[@"code"] intValue];
     NSString *taskType = resultDictionary[@"taskType"];
     NSString *taskId = resultDictionary[@"taskId"];
-    NSString *message = resultDictionary[@"message"];
-    NSString *account = resultDictionary[@"account"];
-    BOOL loginDone = [resultDictionary[@"loginDone"] boolValue];
-    NSLog(@"get import result---code:%d,taskType:%@,taskId:%@,message:%@,account:%@, loginDone:%d",code,taskType,taskId,message,account,loginDone);
+//    NSString *message = resultDictionary[@"message"];
+//    NSString *account = resultDictionary[@"account"];
+//    BOOL loginDone = [resultDictionary[@"loginDone"] boolValue];
+//    NSLog(@"get import result---code:%d,taskType:%@,taskId:%@,message:%@,account:%@, loginDone:%d",code,taskType,taskId,message,account,loginDone);
     // 假如code是2则继续查询该任务进展
     if (code == 2) {
     }
