@@ -3,14 +3,14 @@
 
 ## Getting Started
 
-First, `cd` to your RN project directory, and install RNMK through [rnpm](https://github.com/rnpm/rnpm) . If you don't have rnpm, you can install RNMK from npm with the command `npm i -S rnkit_sensor` and link it manually (see below).
+First, `cd` to your RN project directory, and then install.  
 
 ### iOS
 
 ```
-$ yarn add rnkit_sensor
+$ yarn add rnkit_moxie
 # or: 
-$ npm install -S rnkit_sensor
+$ npm install -S rnkit_moxie
 
 # then:  
 $ react-native link rnkit_moxie
@@ -28,16 +28,16 @@ $ react-native link rnkit_moxie
 5. Open the access to albums (some operations need to scan a qrcode): goto `Info.plist` file and add the privacy key according to your requirement:  
 
 	```
-	Key:  Privacy - Camera Usage Description   
+	Key: Privacy - Camera Usage Description   
 	Value: 需要您的同意,才能访问相册
 	```
 
 ### Android
 
 ```
-$ yarn add rnkit_sensor
+$ yarn add rnkit_moxie
 # or: 
-$ npm install -S rnkit_sensor
+$ npm install -S rnkit_moxie
 
 # then:  
 $ react-native link rnkit_moxie
@@ -56,11 +56,24 @@ import { Platform } from 'react-native';
 import RNKitMoXie from "rnkit_moxie";
 import { DeviceEventEmitter, NativeEventEmitter } from 'react-native';
 
+constructor(props) {
+    super(props);
+    this.moxieSubscription
+    this._initMoxie()
+}
+
+componentWillUnmount() {
+    if (this.moxieSubscription) {
+        // remember to remove
+        this.moxieSubscription.remove()
+    }
+}
+    
 _initMoxie () {
     RNKitMoXie.initial('user_id', 'api_key_value')
     if (Platform.OS === 'ios') {
         const moxieEmitter = new NativeEventEmitter(RNKitMoXie)
-        const moxieSubscription = moxieEmitter.addListener('loginDone', (e) => {
+        this.moxieSubscription = moxieEmitter.addListener('loginDone', (e) => {
             this._callbackForMoxie(e)
         });
     } else {

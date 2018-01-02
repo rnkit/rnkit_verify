@@ -12,6 +12,7 @@ import { DeviceEventEmitter, NativeEventEmitter } from 'react-native';
 export default class App extends Component {
     constructor(props) {
         super(props);
+        this.moxieSubscription
         this._initMoxie()
         this.state = {
             count: -3
@@ -19,8 +20,9 @@ export default class App extends Component {
     }
 
     componentWillUnmount() {
-        if (moxieSubscription) {
-            moxieSubscription.remove()
+        if (this.moxieSubscription) {
+            // remember to remove
+            this.moxieSubscription.remove()
         }
     }
 
@@ -28,7 +30,7 @@ export default class App extends Component {
         RNKitMoXie.initial('15172443007', '3be322fb90ce4af9b85c19577fbdaf5b')
         if (Platform.OS === 'ios') {
             const moxieEmitter = new NativeEventEmitter(RNKitMoXie)
-            const moxieSubscription = moxieEmitter.addListener('loginDone', (e) => {
+            this.moxieSubscription = moxieEmitter.addListener('loginDone', (e) => {
                 this._callbackForMoxie(e)
             });
         } else {
