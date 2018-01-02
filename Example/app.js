@@ -32,7 +32,7 @@ export default class App extends Component {
             const moxieEmitter = new NativeEventEmitter(RNKitMoXie)
             this.moxieSubscription = moxieEmitter.addListener('loginDone', (e) => {
                 this._callbackForMoxie(e)
-            });
+            })
         } else {
             DeviceEventEmitter.addListener('loginDone', function (e) {
                 this._callbackForMoxie(e)
