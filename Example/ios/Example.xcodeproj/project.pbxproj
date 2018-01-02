@@ -38,8 +38,8 @@
 		807C3AFF1F614A76005A7112 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 807C3AFE1F614A76005A7112 /* AdSupport.framework */; };
 		807C3B1B1F614A7F005A7112 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 807C3B1A1F614A7F005A7112 /* libz.tbd */; };
 		807DE2591F4A953C001190A8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 807DE2581F4A953C001190A8 /* libsqlite3.tbd */; };
-		809730C91F693EE900613D13 /* libRNKitSensor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 809730C81F69380C00613D13 /* libRNKitSensor.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		E140CF9C1FFB71CD001FC424 /* libRNKitMoXie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E140CF9B1FFB71BB001FC424 /* libRNKitMoXie.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,19 +225,19 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RCTLinking;
 		};
-		809730C71F69380C00613D13 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 809730C31F69380C00613D13 /* RNKitSensor.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 807DE1FA1F4A7BF5001190A8;
-			remoteInfo = RNKitSensor;
-		};
 		832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
+		};
+		E140CF9A1FFB71BB001FC424 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E140CF7D1FFB71BB001FC424 /* RNKitMoXie.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E140CF581FFB7123001FC424;
+			remoteInfo = RNKitMoXie;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -268,8 +268,8 @@
 		807C3AFE1F614A76005A7112 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		807C3B1A1F614A7F005A7112 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		807DE2581F4A953C001190A8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		809730C31F69380C00613D13 /* RNKitSensor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNKitSensor.xcodeproj; path = ../node_modules/rnkit_sensor/ios/RNKitSensor.xcodeproj; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		E140CF7D1FFB71BB001FC424 /* RNKitMoXie.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNKitMoXie.xcodeproj; path = ../../ios/RNKitMoXie.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,7 +285,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				809730C91F693EE900613D13 /* libRNKitSensor.a in Frameworks */,
+				E140CF9C1FFB71CD001FC424 /* libRNKitMoXie.a in Frameworks */,
 				807C3B1B1F614A7F005A7112 /* libz.tbd in Frameworks */,
 				807C3AFF1F614A76005A7112 /* AdSupport.framework in Frameworks */,
 				807DE2591F4A953C001190A8 /* libsqlite3.tbd in Frameworks */,
@@ -462,18 +462,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		809730C41F69380C00613D13 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				809730C81F69380C00613D13 /* libRNKitSensor.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				809730C31F69380C00613D13 /* RNKitSensor.xcodeproj */,
+				E140CF7D1FFB71BB001FC424 /* RNKitMoXie.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -518,6 +510,14 @@
 				00E356EE1AD99517003FC87E /* ExampleTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* Example-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* Example-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E140CF7E1FFB71BB001FC424 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E140CF9B1FFB71BB001FC424 /* libRNKitMoXie.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -678,8 +678,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 809730C41F69380C00613D13 /* Products */;
-					ProjectRef = 809730C31F69380C00613D13 /* RNKitSensor.xcodeproj */;
+					ProductGroup = E140CF7E1FFB71BB001FC424 /* Products */;
+					ProjectRef = E140CF7D1FFB71BB001FC424 /* RNKitMoXie.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -861,18 +861,18 @@
 			remoteRef = 78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		809730C81F69380C00613D13 /* libRNKitSensor.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNKitSensor.a;
-			remoteRef = 809730C71F69380C00613D13 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		832341B51AAA6A8300B99B32 /* libRCTText.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRCTText.a;
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E140CF9B1FFB71BB001FC424 /* libRNKitMoXie.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNKitMoXie.a;
+			remoteRef = E140CF9A1FFB71BB001FC424 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
