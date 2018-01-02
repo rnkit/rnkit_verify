@@ -13,7 +13,7 @@ import java.util.List;
  * Created by carlos on 2017/8/21.
  */
 
-public class SensorPackage implements ReactPackage {
+public class MoXiePackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
