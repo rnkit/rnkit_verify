@@ -63,12 +63,13 @@ public class DBJsModule extends ReactContextBaseJavaModule {
             public boolean callback(MoxieContext moxieContext, MoxieCallBackData moxieCallBackData) {
                 if (moxieCallBackData != null) {
                     switch (moxieCallBackData.getCode()) {
+                        case MxParam.ResultCode.IMPORT_SUCCESS:
                         case MxParam.ResultCode.IMPORTING:
                             if (moxieCallBackData.isLoginDone()) {
                                 //任务已经登录成功，发送给客户端一个回调
                                 WritableMap params = Arguments.createMap();
                                 params.putString("functionName", function);
-                                params.putString("taskId",moxieCallBackData.getTaskId());
+                                params.putString("taskId", moxieCallBackData.getTaskId());
                                 sendEvent(applicationContext, "loginDone", params);
                                 moxieContext.finish();
 
