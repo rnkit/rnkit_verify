@@ -58,7 +58,6 @@ public class MyActivity extends Activity implements VerifyCoder.VerifyListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        onVerifyFail();
     }
 
     @Override
@@ -67,6 +66,7 @@ public class MyActivity extends Activity implements VerifyCoder.VerifyListener {
         intent.putExtra("result", "success");
         intent.setAction(VerifyModule.class.getName());
         intent.putExtra("ticket", s);
+        this.sendBroadcast(intent);
         finish();
     }
 

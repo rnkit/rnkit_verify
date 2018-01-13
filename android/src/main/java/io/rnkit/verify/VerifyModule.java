@@ -38,7 +38,7 @@ public class VerifyModule extends ReactContextBaseJavaModule {
      * 初始化
      */
     @ReactMethod
-    public void start(String url) {
+    public void showVerifyView(String url) {
         Intent intent = new Intent(getCurrentActivity(), MyActivity.class);
         intent.putExtra("jsUrl", url);
         getCurrentActivity().startActivity(intent);
