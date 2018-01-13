@@ -1,4 +1,4 @@
-package io.rnkit.moxie;
+package io.rnkit.verify;
 
 import org.junit.Test;
 

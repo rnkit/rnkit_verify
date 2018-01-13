@@ -1,4 +1,4 @@
-package io.rnkit.moxie;
+package io.rnkit.verify;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -13,11 +13,11 @@ import java.util.List;
  * Created by carlos on 2017/8/21.
  */
 
-public class MoXiePackage implements ReactPackage {
+public class VerifyPackage implements ReactPackage {
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Collections.<NativeModule>singletonList(new DBJsModule(reactContext));
+        return Collections.<NativeModule>singletonList(new VerifyModule(reactContext));
     }
 
     @Override

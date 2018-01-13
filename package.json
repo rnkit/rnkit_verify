@@ -1,6 +1,6 @@
 {
-  "name": "rnkit_sensor",
-  "description": "魔蝎",
+  "name": "rnkit_verify",
+  "description": "验证码",
   "main": "lib/index.js",
   "author": "carlos",
   "version": "1.0.0",
