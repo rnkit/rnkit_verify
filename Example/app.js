@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { AppRegistry, Text, StyleSheet, View, TouchableHighlight, Platform } from 'react-native';
-import RNKitMoXie from "rnkit_moxie";
+import RNKitMoXie from "rnkit_verify";
 import { DeviceEventEmitter, NativeEventEmitter } from 'react-native';
 
 export default class App extends Component {
